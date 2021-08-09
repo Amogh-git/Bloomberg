@@ -1,0 +1,97 @@
+<br><br><br><br>
+<div class="main">
+    <div class="section1">
+        <b>Markets</b>
+        <h1><b style="font-size: 36px;font-weight: 750;">Currencies</b></h1>
+        <div class="box">
+            <input class="search-bar" type="text" placeholder="Quote search...">
+        </div>
+        <div *ngFor="let i of financeArticles | slice:1:6">
+            <div class="card">
+                <span id="link" style="font-size:12px;">{{i.sectionName}}</span><br>
+                <b id="link">{{i.webTitle}}</b><br>
+            </div>
+        </div>
+        <br><br>
+    </div>
+    <div class="section2">
+        <div class="btn-strip">
+            <button class="btn">Start Trading >></button>
+            <button class="btn">Start Trading >></button>
+            <button class="btn">Start Trading >></button>
+            <button class="btn">Start Trading >></button>
+        </div>
+        <br><br>
+        <div class="options">
+            <b id="link" class="opt">Overview</b>
+            <b id="link" class="opt">Americas</b>
+            <b id="link" class="opt">EMEA</b>
+            <b id="link" class="opt">APAC</b>
+        </div><br>
+        <hr style="height: 20px;background: peachpuff;border:none">
+        <br>
+        <table>
+            <tr style="border-bottom: 1px solid rgb(87, 86, 86);">
+                <th>CURRENCY</th>
+                <th>ASK</th>
+                <th>BID</th>
+                <th>MID</th>
+                <th>TIME(GMT)</th>
+            </tr>
+            <tr class="row">
+                <td><b>udgfhd</b></td>
+                <td>hjbdf</td>
+                <td>adff</td>
+                <td>djfik</td>
+                <td>{{now}}</td>
+            </tr>
+            <tr class="row">
+                <td><b>udgfhd</b></td>
+                <td>hjbdf</td>
+                <td>adff</td>
+                <td>djfik</td>
+                <td>{{now}}</td>
+            </tr>
+            <tr class="row">
+                <td><b>udgfhd</b></td>
+                <td>hjbdf</td>
+                <td>adff</td>
+                <td>djfik</td>
+                <td>{{now}}</td>
+            </tr>
+            <tr class="row">
+                <td><b>udgfhd</b></td>
+                <td>hjbdf</td>
+                <td>adff</td>
+                <td>djfik</td>
+                <td>{{now}}</td>
+            </tr>
+            <tbody *ngFor="let i of FXRates">
+                
+                <!--<tr class="row">
+                    <td id="link"><b>{{i.base_currency}}{{i.quote_currency}}</b></td>
+                    <td>{{i.ask}}</td>
+                    <td>{{i.bid}}</td>
+                    <td>{{i.mid}}</td>
+                    <td>{{time.toLocaleDateString('en-US', { hour: 'numeric', hour12: true })}}</td>
+                </tr>-->
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <span style="font-size: 12px;">Currency rates are representative of the Bloomberg Generic Composite rate (BGN), a representation based on indicative rates only contributed by market participants. The data is NOT based on any actual market trades. Currency data is 5 minutes delayed, provided for information purposes only and not intended for trading; Bloomberg does not guarantee the accuracy of the data. See full details and disclaimer.</span>
+        
+    </div>
+</div>
+
+<br><br>
+<div style="width: 80%; margin:auto;display: block;overflow: auto;">
+    <div *ngFor="let i of ads | slice:1:10">
+        <div class="card3">
+            <img src="{{i['fields']['thumbnail']}}" width="100%" height="180px">
+            <span style="font-size:12px;">{{i.sectionName}}</span><br>
+            <b>{{i.webTitle}}</b><br>
+            <span style="font-size:12px;">{{i.webPublicationDate | date}}</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+.navbar{
+    background-color: black;
+    color: white;
+    padding: 7px;
+    font-size: small;
+}
+.vr{
+    position: absolute;
+    height: 90%;
+    background-color: white;
+    width:1px;
+}
+.btn{
+    background: transparent;
+    border: none;
+    padding: 5px;
+    min-width: 5%;
+    font-size: medium;
+}
+.btn:hover{
+    color: lightgray;
+}
+.btn-corner{
+    font-weight: bold;
+    min-width: 5%;
+    background: transparent;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: medium;
+}
+.btn-corner:hover{
+    color: lightgray;
+}
+.footer{
+    height: 120px;
+    border-top: 1px solid grey;
+    width:100%;
+}
+.row1{
+    width: 100%;
+    position: relative;
+}
+.footer-element{
+    font-size: 12px;
+    margin-left:30px;
+}

@@ -1,0 +1,128 @@
+<br><br>
+<div style="width: 80%;margin:auto;position: relative;">
+
+    <div class="opt-bar">
+        <span style="font-weight: bold;">Quick Links:</span>&nbsp;&nbsp;
+        <span id="link">Commodities</span>&nbsp;&nbsp;
+        <span id="link">Stocks</span>&nbsp;&nbsp;
+        <span id="link">Rates & Bounds</span>&nbsp;&nbsp;
+        <span id="link">Currencies</span>&nbsp;&nbsp;
+        <span id="link">Futures</span>&nbsp;&nbsp;
+        <span id="link">Economics</span>&nbsp;&nbsp;
+        <span id="link">Fixed Income</span>&nbsp;&nbsp;
+        <span id="link">ETFs</span>&nbsp;&nbsp;
+        <span id="link">Sectors</span>&nbsp;&nbsp;
+        <span id="link">Watchlists</span>&nbsp;&nbsp;
+        <span id="link">Wealth</span>&nbsp;&nbsp;
+        <span id="link">Covid-19</span>
+    </div>
+    <div style="width: 100%;border-bottom: 1px solid black;border-top:1px solid black;">
+        <ng-ticker-tape
+        [tickerData]="tickerData">
+        </ng-ticker-tape>  
+    </div> 
+    <div class="left-news-section">
+        <hr>
+        <span style="font-size: x-large;color: red;">RECENT</span>
+        <hr>
+
+        <div *ngFor="let i of recentArticles | slice: 0:5">
+            <span id="link" style="font-size:12px;">{{i.sectionName}}</span><br>
+            <b id="link">{{i.webTitle}}</b><br>
+            <span id="link" style="font-size:12px;">{{i.webPublicationDate | date}}</span>
+            <hr>
+        </div>
+        
+    </div>
+    <div class="middle-news-section">
+        <br>
+        <div style="float: left;width:50%;">
+            <img src="{{headArticle['fields']['thumbnail']}}" width="100%">
+        </div>
+        <div style="float: left;width: 46.5%;padding-left: 20px;">
+            <span id="link" style="font-size:12px;">{{headArticle['sectionName']}}</span><br>
+            <b id="link" style="font-size: x-large;font-weight: 750;">
+                {{headArticle.webTitle}}
+            </b>
+            <br>
+            <hr>
+            <div *ngFor="let i of subArticles">
+                <span id="link" style="font-size: 12px;">{{i.webTitle}}</span><hr>
+            </div>
+        </div>
+        <div style="clear: both;">
+            <div *ngFor = "let i of worldArticles|slice:4:12">
+                <div class="card">
+                    <span id="link" style="font-size:12px;">{{i.sectionName}}</span><br>
+                    <b id="link">{{i.webTitle}}</b>
+                    <br>
+                    <div class="footnote">
+                        <span style="font-size:12px;">{{i.webPublicationDate | date}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card2">
+            <img src="{{worldArticles[12]['fields']['thumbnail']}}" width="100%">
+            <span id="link" style="font-size:12px;">{{worldArticles[12].sectionName}}</span><br>
+            <b id="link">{{worldArticles[12].webTitle}}</b>
+            <br>
+        </div>
+        <div class="card2">
+            <img src="{{worldArticles[13]['fields']['thumbnail']}}" width="100%">
+            <span id="link" style="font-size:12px;">{{worldArticles[13].sectionName}}</span><br>
+            <b id="link">{{worldArticles[13].webTitle}}</b>
+            <br>
+        </div>
+        <div class="card2">
+            <img src="{{worldArticles[14]['fields']['thumbnail']}}" width="100%">
+            <span id="link" style="font-size:12px;">{{worldArticles[14].sectionName}}</span><br>
+            <b id="link">{{worldArticles[14].webTitle}}</b>
+            <br>
+        </div>
+        
+    </div>
+    
+    <div class="right-news-section">
+        <hr>
+        <b style="font-size: x-large;font-weight:900;">FinBerg <span style="color: dodgerblue;">Opinion</span></b>
+        <hr>
+        <div *ngFor="let i of opinionArticles | slice: 0:7">
+            <span id="link" style="font-size:12px;">{{i.sectionName}}</span><br>
+            <b id="link">{{i.webTitle}}</b><br>
+            <hr>
+        </div>
+    </div>
+    <div style="clear: both;">
+        <br><br>
+        <h2 ><b style="font-size: 36px;font-weight: 1000;">Covid-19</b></h2>
+    </div>
+    <div class="flex-container">
+        <div *ngFor="let i of covidArticles">
+            <div class="card3">
+                <img src="{{i['fields']['thumbnail']}}" width="100%" height="180px">
+                <span id="link" style="font-size:12px;">{{i.sectionName}}</span><br>
+                <b id="link">{{i.webTitle}}</b><br>
+                <span style="font-size:12px;">{{i.webPublicationDate | date}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div style="clear: both;">
+        <br><br>
+        <h2 ><b style="font-size: 36px;font-weight: 1000;">Tokyo Olympics</b></h2>
+    </div>
+    <div class="flex-container">
+        <div *ngFor="let i of olympicArticles">
+            <div class="card3">
+                <img src="{{i['fields']['thumbnail']}}" width="100%" height="180px">
+                <span id="link" style="font-size:12px;">{{i.sectionName}}</span><br>
+                <b id="link">{{i.webTitle}}</b><br>
+                <span style="font-size:12px;">{{i.webPublicationDate | date}}</span>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
